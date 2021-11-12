@@ -6,6 +6,8 @@ The commands below should be used to initialise a new project similar to this on
 
 They should **not** be run from this repository.
 
+![preview](./preview.png)
+
 ## Initialise project
 
 
