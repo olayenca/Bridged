@@ -3,6 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <Bridged-Swift.h> //converted to swift to header file
 
 #if DEBUG
 #import <FlipperKit/FlipperClient.h>
@@ -43,6 +44,14 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  SplashScreenViewController *launchController = [[SplashScreenViewController alloc] init];
+  
+  [launchController view];
+  
+  launchController.viewController = rootViewController;
+  [launchController loadVideo];
+  
   return YES;
 }
 

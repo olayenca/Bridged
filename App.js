@@ -14,6 +14,8 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
+  NativeModules,
 } from 'react-native';
 
 import {
@@ -25,6 +27,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
+  const { CustomRN: { goBack } } = NativeModules;
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -33,6 +36,10 @@ const App: () => React$Node = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <Header />
+          <Button
+            title="Go To Swift"
+            onPress={() => goBack()}
+          />
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
               <Text style={styles.footer}>Engine: Hermes</Text>
